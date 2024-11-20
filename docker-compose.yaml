@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  java_database:
+    container_name: java_database
+    image: postgres:12
+    ports:
+      - 5443:5432
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - shoppingAppData:/var/lib/postgresql/data
+volumes:
+  shoppingAppData: {}
